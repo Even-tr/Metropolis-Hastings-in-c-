@@ -22,8 +22,6 @@ std::default_random_engine generator;
 std::normal_distribution<double> normal_theta(0, prop_stdev_theta);
 std::normal_distribution<double> normal_year(0, prop_stdev_year);
 std::uniform_real_distribution<double> uniform_01(0, 1);
-std::uniform_int_distribution<int> RandomShift(0, 8);
-
 
 double prop_year(){
     double sample = normal_year(generator);
@@ -307,8 +305,6 @@ int main(){
     }
 
     std::cout << "Acceptance rate " << (float) accepted / (float) chain_length << std::endl;
-
-
 
     std::cout << "Saving chain to " << out_path << std::endl;
     // Write the chain to file 
